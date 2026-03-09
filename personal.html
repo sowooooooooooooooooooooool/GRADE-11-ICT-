@@ -578,4 +578,78 @@
         <div class="content-panel" id="conclusion">
             <div class="content-panel-title">Conclusion</div>
             <div class="content-panel-body">
-                <div class="panel-with-ph
+                <div class="panel-with-photo">
+                    <div class="panel-photo">
+                        <img src="./personal/per (20).jpg" alt="Saul Tobias">
+                    </div>
+                    <div class="panel-text">
+                        <p>
+                            The recent years, the time of both euphoria and sorrow, the time of being immersed in the real world.
+                            This was youth, my youth. I believe this was the true finding of what I am, who I am as a person.
+                        </p>
+                        <p>
+                            8th grade, I was pretty normal, started out quiet but still had enjoyable fun due to me gaining a friend group of five.
+                            9th Grade, the start of the absolute life of mine, I would say. This was the time of curiosity, I gained new friends and especially liked a girl.
+                            That girl was someone I knew from elementary, a familiar face. Although, nothing really happened that would make us dependently close, that was about it.
+                        </p>
+                        <p>
+                            10th Grade, I was in my prime social life, I hung out with a lot people, mostly became somewhat normal as in no particular shyness or distinct from others.
+                            Grades were in an all time high, I befriended everyone, with the highest social status friends group in class.
+                            Now, currently in 11th Grade, Senior High School. I am finding my purpose or somehow trying to achieve such a thing to go and continue living on.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXPLORE LINKS -->
+        <div class="content-panel">
+            <div class="content-panel-title">Explore More</div>
+            <div class="links-row">
+                <a href="personal_album.html">See Other Pictures</a>
+                <a href="education.html">My School Experience</a>
+                <a href="family.html">About My Family</a>
+                <a href="collection.html">My Personal Collection</a>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<footer class="site-footer">
+    &copy; 2026 SOWL &nbsp;·&nbsp; All rights reserved
+</footer>
+
+<script>
+    // Generate floating sakura petals in the header
+    const container = document.getElementById('petals');
+    const colors = ['#ffb3d1','#ffd6e7','#c8a0e8','#a8c8ff','#ffaed4'];
+
+    for (let i = 0; i < 18; i++) {
+        const p = document.createElement('div');
+        p.className = 'petal';
+        const size = 7 + Math.random() * 8;
+        p.style.cssText = `
+            width: ${size}px;
+            height: ${size}px;
+            left: ${Math.random() * 100}%;
+            background: ${colors[Math.floor(Math.random() * colors.length)]};
+            animation-duration: ${3 + Math.random() * 5}s;
+            animation-delay: ${Math.random() * 6}s;
+            border-radius: ${Math.random() > 0.5 ? '50% 0 50% 0' : '0 50% 0 50%'};
+            opacity: 0;
+        `;
+        container.appendChild(p);
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+</script>
+</body>
+</html>
