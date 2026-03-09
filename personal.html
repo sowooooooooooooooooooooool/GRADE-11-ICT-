@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOWL — Personal</title>
+    <title>Personal — SOWL</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -134,7 +134,7 @@
             100% { transform: translateY(300px) rotate(720deg); opacity: 0; }
         }
 
-        /* ── TOP NAV ── */
+        /* ── TOP NAV BAR ── */
         .top-nav {
             background: linear-gradient(90deg, var(--blue-dark) 0%, #2a1256 50%, var(--blue-dark) 100%);
             border-bottom: 2px solid var(--pink-mid);
@@ -179,10 +179,6 @@
 
         .top-nav a:hover { color: white; }
         .top-nav a:hover::before { transform: translateY(0); }
-        .top-nav a.active {
-            color: white;
-            background: rgba(214,63,122,0.18);
-        }
 
         /* ── LAYOUT ── */
         .page-body {
@@ -258,10 +254,6 @@
         }
 
         .sidebar-nav a:hover::before { color: var(--blue-mid); }
-        .sidebar-nav a.active {
-            color: var(--pink-deep);
-            font-weight: 600;
-        }
 
         .sidebar-section-label {
             font-size: 0.7rem;
@@ -273,11 +265,41 @@
             display: block;
         }
 
+        /* Profile card in sidebar */
+        .sidebar-profile {
+            padding: 16px;
+            text-align: center;
+        }
+
+        .sidebar-profile img {
+            width: 120px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 2px solid var(--pink-mid);
+            box-shadow: 0 4px 16px rgba(214,63,122,0.25);
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .sidebar-profile-name {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--blue-deep);
+            letter-spacing: 0.08em;
+        }
+
+        .sidebar-profile-sub {
+            font-size: 0.7rem;
+            color: var(--text-soft);
+            margin-top: 3px;
+        }
+
         /* ── MAIN CONTENT ── */
         .main-content {
             flex: 1;
             min-width: 0;
-            margin-left: 16px;
+            padding-left: 18px;
             display: flex;
             flex-direction: column;
             gap: 16px;
@@ -328,127 +350,68 @@
             color: var(--text-soft);
         }
 
-        .content-panel-body p { margin-bottom: 12px; }
-        .content-panel-body p:last-child { margin-bottom: 0; }
-
-        .content-panel-body a {
-            color: var(--blue-deep);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--pink-mid);
-            transition: all 0.2s;
-        }
-
-        .content-panel-body a:hover {
-            color: var(--pink-deep);
-            border-bottom-color: var(--pink-deep);
-        }
-
-        /* ── PROFILE PHOTO BLOCK ── */
-        .profile-block {
+        /* Photo + text side by side */
+        .panel-with-photo {
             display: flex;
             gap: 20px;
             align-items: flex-start;
         }
 
-        .profile-photo {
+        .panel-photo {
             flex-shrink: 0;
-            width: 180px;
+            width: 185px;
         }
 
-        .profile-photo img {
+        .panel-photo img {
             width: 100%;
-            border-radius: 8px;
+            border-radius: 6px;
             border: 2px solid var(--pink-mid);
-            box-shadow: 0 4px 16px rgba(214,63,122,0.25);
+            box-shadow: 0 4px 18px rgba(214,63,122,0.22);
             display: block;
         }
 
-        .profile-photo-caption {
-            text-align: center;
-            font-size: 0.72rem;
-            color: var(--text-soft);
-            margin-top: 6px;
-            font-style: italic;
-            opacity: 0.8;
-        }
+        .panel-photo.right { order: 2; }
 
-        .profile-text { flex: 1; min-width: 0; }
+        .panel-text { flex: 1; }
+        .panel-text p { margin-bottom: 10px; }
+        .panel-text p:last-child { margin-bottom: 0; }
 
-        /* ── PHOTO ROW ── */
-        .photo-row {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-
-        .photo-row img {
-            border-radius: 8px;
-            border: 2px solid var(--blue-mid);
-            box-shadow: 0 4px 16px rgba(30,95,168,0.2);
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .photo-row img:hover {
-            transform: scale(1.04);
-            box-shadow: 0 8px 28px rgba(214,63,122,0.3);
-        }
-
-        /* ── TIMELINE DOT ── */
-        .timeline-entry {
-            position: relative;
-            padding-left: 22px;
-            margin-bottom: 14px;
-        }
-
-        .timeline-entry::before {
-            content: '✦';
-            position: absolute;
-            left: 0;
-            top: 2px;
-            font-size: 0.65rem;
-            color: var(--pink-mid);
-        }
-
-        .timeline-entry strong {
-            color: var(--pink-deep);
-            font-size: 0.85rem;
-            display: block;
-            margin-bottom: 3px;
-            font-family: 'Cinzel', serif;
-            letter-spacing: 0.06em;
-        }
-
-        /* ── QUICK LINKS ── */
-        .quick-links {
+        /* Explore links row */
+        .links-row {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            padding: 16px 20px;
         }
 
-        .quick-link-btn {
-            display: inline-block;
-            padding: 7px 18px;
-            background: linear-gradient(135deg, rgba(214,63,122,0.12), rgba(30,95,168,0.12));
+        .links-row a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 16px;
+            background: linear-gradient(135deg, rgba(214,63,122,0.10), rgba(30,95,168,0.10));
             border: 1px solid var(--pink-mid);
             border-radius: 20px;
             color: var(--blue-deep);
             text-decoration: none;
             font-size: 0.82rem;
             font-weight: 600;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.04em;
             transition: all 0.25s ease;
         }
 
-        .quick-link-btn:hover {
-            background: linear-gradient(135deg, rgba(214,63,122,0.28), rgba(30,95,168,0.28));
-            color: white;
-            border-color: var(--pink-deep);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 14px rgba(214,63,122,0.3);
+        .links-row a::before {
+            content: '✦';
+            font-size: 0.6rem;
+            color: var(--pink-deep);
+        }
+
+        .links-row a:hover {
+            background: linear-gradient(135deg, rgba(214,63,122,0.22), rgba(30,95,168,0.18));
+            border-color: var(--blue-mid);
+            color: var(--pink-deep);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(214,63,122,0.18);
         }
 
         /* ── FOOTER ── */
@@ -462,7 +425,6 @@
             border-top: 1px solid rgba(200,150,200,0.3);
         }
 
-        /* ── BACKGROUND GLOW ── */
         body::before {
             content: '';
             position: fixed;
@@ -479,12 +441,12 @@
         @media (max-width: 700px) {
             .page-body { flex-direction: column; }
             .sidebar { width: 100%; }
-            .main-content { margin-left: 0; }
             .site-header { height: 200px; }
             .header-title h1 { font-size: 2rem; }
             .top-nav a { padding: 0.5rem 0.8rem; font-size: 0.75rem; }
-            .profile-block { flex-direction: column; }
-            .profile-photo { width: 100%; max-width: 240px; margin: 0 auto; }
+            .panel-with-photo { flex-direction: column; }
+            .panel-photo, .panel-photo.right { width: 100%; max-width: 220px; order: 0; }
+            .main-content { padding-left: 0; }
         }
     </style>
 </head>
@@ -492,23 +454,23 @@
 
 <!-- ── HEADER ── -->
 <header class="site-header">
-    <img class="header-img" src="./index/style/personalbg.jpg" alt="Personal header">
+    <img class="header-img" src="./index/style/header_bg.png" alt="Sakura header">
     <div class="header-overlay-1"></div>
     <div class="header-overlay-2"></div>
     <div class="header-overlay-3"></div>
     <div class="petals-container" id="petals"></div>
     <div class="header-title">
         <h1>SOWL</h1>
-        <span>Personal — Saul Tobias</span>
+        <span>Personal</span>
     </div>
 </header>
 
 <!-- ── TOP NAV ── -->
 <nav class="top-nav">
-    <a href="personal.html" class="active">Personal</a>
-    <a href="family.html">Family</a>
-    <a href="education.html">Education</a>
-    <a href="collection.html">Collection</a>
+    <a href="personal.html">Personal</a>
+    <a target="_blank" href="family.html">Family</a>
+    <a target="_blank" href="education.html">Education</a>
+    <a target="_blank" href="collection.html">Collection</a>
     <a href="./index/card_info.html">Info</a>
     <a href="./index/login.html">Login</a>
 </nav>
@@ -518,158 +480,102 @@
 
     <!-- SIDEBAR -->
     <aside class="sidebar">
+
+        <div class="sidebar-panel">
+            <div class="sidebar-profile">
+                <img src="./personal/per (2).jpg" alt="Saul Tobias">
+                <div class="sidebar-profile-name">Saul Tobias</div>
+                <div class="sidebar-profile-sub">Oct 13, 2009 · Libra</div>
+            </div>
+        </div>
+
+        <div class="sidebar-panel">
+            <div class="panel-title">On This Page</div>
+            <ul class="sidebar-nav">
+                <li><span class="sidebar-section-label">Sections</span></li>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#body">Body</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </div>
+
         <div class="sidebar-panel">
             <div class="panel-title">Navigation</div>
             <ul class="sidebar-nav">
-                <li><span class="sidebar-section-label">Main</span></li>
-                <li><a href="index.html">Home</a></li>
                 <li><span class="sidebar-section-label">Pages</span></li>
-                <li><a href="personal.html" class="active">Personal</a></li>
-                <li><a href="family.html">Family</a></li>
+                <li><a href="personal_album.html">Album</a></li>
                 <li><a href="education.html">Education</a></li>
+                <li><a href="family.html">Family</a></li>
                 <li><a href="collection.html">Collection</a></li>
-            </ul>
-        </div>
-
-        <div class="sidebar-panel">
-            <div class="panel-title">Personal</div>
-            <ul class="sidebar-nav">
-                <li><a href="#childhood">Childhood</a></li>
-                <li><a href="#youth">Growing Up</a></li>
-                <li><a href="#present">Present</a></li>
-                <li><a href="personal_album.html">Photo Album</a></li>
-            </ul>
-        </div>
-
-        <div class="sidebar-panel">
-            <div class="panel-title">Links</div>
-            <ul class="sidebar-nav">
+                <li><span class="sidebar-section-label">Links</span></li>
                 <li><a href="./index/card_info.html">Info Card</a></li>
                 <li><a href="./index/login.html">Login</a></li>
             </ul>
         </div>
+
     </aside>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
 
-        <!-- INTRO PANEL -->
-        <div class="content-panel" id="childhood">
-            <div class="content-panel-title">Saul Tobias — Introduction</div>
+        <!-- INTRODUCTION -->
+        <div class="content-panel" id="introduction">
+            <div class="content-panel-title">Introduction</div>
             <div class="content-panel-body">
-                <div class="profile-block">
-                    <div class="profile-photo">
+                <div class="panel-with-photo">
+                    <div class="panel-photo">
                         <img src="./personal/per (2).jpg" alt="Saul Tobias">
-                        <div class="profile-photo-caption">Saul Tobias</div>
                     </div>
-                    <div class="profile-text">
+                    <div class="panel-text">
                         <p>
-                            Born on the <strong>13th of October, 2009</strong> — a Libra. From an early age, I was a reclusive person, finding comfort in solitude and independence. I learned most of what I know through my own experience, forging my own path quietly.
+                            I was born on the 13th of October in the year 2009, I am a libra.
                         </p>
                         <p>
-                            Socializing with peers was never easy back then — I wasn't exactly a loner, but I certainly wasn't anyone's closest friend either. People often called me smart, even one of a kind, though I'd hesitate to say that still holds true.
+                            I am a very reclusive person, I quite like being alone as I am often am.
+                            I learned most of my knowledge by my own experience, I could call myself independent as a child.
+                            It was very much hard for me to actively socialize with peers back then. I wasn't much of a loner but I definitely wasn't anyone's best friend.
                         </p>
                         <p>
-                            As a child I wasn't a troublemaker, though I had my moments. I struggled with anger — a habit of suppression that would eventually boil over. What I mostly did was simple: play games and explore the internet. Technology was always my world.
+                            People mostly would say I was smart as a child, even one of a kind... though it is not true anymore.
+                            I wasn't much of a troublemaker as a kid but I did have my moments.
+                            I had a problem with anger as a child, I would lash on others after suppression, I try not to now.
+                            What I did as a child was simple, I mainly played games or dwell on the internet, I was very much exposed to technology.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- TEENAGE / GROWING UP PANEL -->
-        <div class="content-panel" id="youth">
-            <div class="content-panel-title">Growing Up</div>
+        <!-- BODY -->
+        <div class="content-panel" id="body">
+            <div class="content-panel-title">Body</div>
             <div class="content-panel-body">
-                <div class="profile-block">
-                    <div class="profile-text">
+                <div class="panel-with-photo">
+                    <div class="panel-text">
                         <p>
-                            In my early teenage years, I found myself confused about my direction. The pandemic arrived just as I was stepping into adolescence, keeping me indoors and alone — and I became even more immersed in the absence of companionship.
+                            In my teenage years or the years in which I was up and coming to be one, I was confused in my endeavors.
+                            As growing into the adolescence stage, It was during the pandemic in which I was always inside the house.
                         </p>
                         <p>
-                            That time was defined by consuming media, exploring what I liked, and taking the first quiet steps toward forming a self-identity. I hadn't fully grasped who I was yet, but the searching had begun.
+                            I believe I became more indulged in the absence of companionship, this was the time in which I consumed much media.
+                            I didn't have such friends that I could've communicated at that time, though I was still very much in awe on my exploration of what I like.
+                            It was the beginning of my self identity, though I haven't fully grasped on it.
                         </p>
                         <p>
-                            Life was largely uneventful — just me and my own thoughts — but I was still happy-go-lucky, blissfully unaware of much of the world's complexity. There was still so much left to learn.
+                            This time of life was mainly boring as it would just usually be me doing my own stuff which isn't completely interesting.
+                            I was oblivious to the reality of the world, still being happy go lucky as I was.
+                            I definitely had much to learn, which would eventually astonish me in ways.
                         </p>
                     </div>
-                    <div class="profile-photo">
-                        <img src="./personal/per (7).jpg" alt="Growing up">
-                        <div class="profile-photo-caption">Finding myself</div>
+                    <div class="panel-photo right">
+                        <img src="./personal/per (7).jpg" alt="Saul Tobias">
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- RECENT YEARS PANEL -->
-        <div class="content-panel" id="present">
-            <div class="content-panel-title">Recent Years</div>
+        <!-- CONCLUSION -->
+        <div class="content-panel" id="conclusion">
+            <div class="content-panel-title">Conclusion</div>
             <div class="content-panel-body">
-
-                <div class="photo-row" style="margin-bottom: 18px;">
-                    <img src="./personal/per (20).jpg" alt="Saul — recent">
-                </div>
-
-                <div class="timeline-entry">
-                    <strong>8th Grade</strong>
-                    Started out quiet, but found my footing. A friend group of five made it genuinely enjoyable — the first real social ground I'd stand on.
-                </div>
-                <div class="timeline-entry">
-                    <strong>9th Grade</strong>
-                    The true beginning. Curiosity took over — new friends, new feelings. I became interested in a familiar face from elementary school. Nothing came of it, but something shifted inside me.
-                </div>
-                <div class="timeline-entry">
-                    <strong>10th Grade</strong>
-                    My prime. Social life was at its peak — I hung out with many people, befriended nearly everyone, and found myself in the highest social circles of my class. Grades followed suit, reaching an all-time high.
-                </div>
-                <div class="timeline-entry">
-                    <strong>11th Grade — Now</strong>
-                    Senior High School. The search for purpose has become more conscious, more intentional. I am still finding my way — trying to discover what it is I'm meant to do, and who I am meant to become.
-                </div>
-            </div>
-        </div>
-
-        <!-- QUICK LINKS PANEL -->
-        <div class="content-panel">
-            <div class="content-panel-title">Explore More</div>
-            <div class="content-panel-body">
-                <div class="quick-links">
-                    <a href="personal_album.html" class="quick-link-btn">📷 Photo Album</a>
-                    <a href="education.html" class="quick-link-btn">🎓 School Experience</a>
-                    <a href="family.html" class="quick-link-btn">🏠 About My Family</a>
-                    <a href="collection.html" class="quick-link-btn">✨ My Collection</a>
-                </div>
-            </div>
-        </div>
-
-    </main>
-</div>
-
-<footer class="site-footer">
-    &copy; 2026 SOWL &nbsp;·&nbsp; All rights reserved
-</footer>
-
-<script>
-    // Floating sakura petals
-    const container = document.getElementById('petals');
-    const colors = ['#ffb3d1','#ffd6e7','#c8a0e8','#a8c8ff','#ffaed4'];
-
-    for (let i = 0; i < 18; i++) {
-        const p = document.createElement('div');
-        p.className = 'petal';
-        const size = 7 + Math.random() * 8;
-        p.style.cssText = `
-            width: ${size}px;
-            height: ${size}px;
-            left: ${Math.random() * 100}%;
-            background: ${colors[Math.floor(Math.random() * colors.length)]};
-            animation-duration: ${3 + Math.random() * 5}s;
-            animation-delay: ${Math.random() * 6}s;
-            border-radius: ${Math.random() > 0.5 ? '50% 0 50% 0' : '0 50% 0 50%'};
-            opacity: 0;
-        `;
-        container.appendChild(p);
-    }
-</script>
-</body>
-</html>
+                <div class="panel-with-ph
