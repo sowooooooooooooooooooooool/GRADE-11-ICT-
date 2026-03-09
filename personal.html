@@ -1,86 +1,675 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>
-		My Portfolio
-	</title>
-<style>
-	body {
-		background-image: url("./index/style/personalbg.jpg");
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat:
-	}
-</style>
-<body>
-	<h1 style="color:rgb(255, 255, 255);"> Saul Tobias </h1>
-	<img src="./personal/per (2).jpg" align="left" width="235" hspace="20">
-	<p style="text-align:center;color:rgb(255, 255, 255);text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);">
-		I am saul, <br><br><br><br><br><br><br><br><br><br>
-		I was born on the 13th of October in the year 2009, I am a libra.
-		<br>
-		I am a very reclusive person, I quite like being alone as I am often am.
-		I learned most of my knowledge by my own experience, I could call myself independent as a child. 
-		It was very much hard for me to actively socialize with peers back then. I wasn't much of a loner but I definitely wasn't anyone's best friend.
-		People mostly would say I was smart as a child, even one of a kind... though it is not true anymore.
-		I wasn't much of a troublemaker as a kid but I did have my moments.
-		I had a problem with anger as a child, I would lash on others after supression, I try not to now.
-		What I did as a child was simple, I mainly played games or dwell on the internet, I was very much exposed to technology.
-	</p>
-	<img src="./personal/per (7).jpg" align="right" width="235" hspace="20">
-	<p style="text-align:center;color:rgb(255, 255, 255);text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);">
-		I am saul, <br><br><br><br><br><br><br><br><br><br>
-		In my teenage years or the years in which I was up and coming to be one, I was confused in my endeavors.
-		As growing into the adolescence stage, It was during the pandemic in which I was always inside the house.
-		I believe I became more indulged in the absence of companionship, this was the time in which I consumed much media.
-		I didn't have such friends that I could've communicated at that time, though I was still very much in awe on my exploration of what I like.
-		It was the beginning of my self identity, though I haven't fully grasped on it.
-		This time of life was mainly boring as it would just usually be me doing my own stuff which isn't completely interesting.
-		I was oblivous to the reality of the world, still being happy go lucky as I was.
-		I definitely had much to learn, which would eventually astonish me in ways.
-		<br>
-	</p>
-	<p style="text-align:center;color:rgb(253, 253, 253);text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);">
-		I am saul, <br><br><br><br><br><br><br><br><br><br>
-		<img src="./personal/per (20).jpg" align="center" width='235' hspace'20'>
-		The recent years, the time of both euphoria and sorrow, the time of being immersed in the real world.
-		This was youth, my youth. I believe this was the true finding of what I am, who I am as a person.
-		8th grade, I was pretty normal, started out quiet but still had enjoyable fun due to me gaining a friend group of five.
-		9th Grade, the start of the absolute life of mine, I would say. This was the time of curiosity, I gained new friends and especially liked a girl.
-		That girl was someone I knew from elementary, a familiar face. Although, nothing really happened that would make us dependantly close, that was about it.
-		10th Grade, I was in my prime social life, I hung out with a lot people, mostly became somewhat normal as in no particular shyness or distinct from others.
-		Grades were in an all time high, I befriended everyone, with the highest social status friends group in class.
-		Now, currently in 11th Grade, Senior High School. I am finding my purpose or somehow trying to achieve such a thing to go and continue living on.
-		
-	</p>
-		<a href="personal_album.html"> 
-		See Other Pictures
-		</a>
-		<br>
-		<a href="education.html"> 
-		My School Experience
-		</a>
-		<br>
-		<a href="family.html"> 
-		About My Family
-		</a>
-		<br>
-		<a href="collection.html"> 
-		My Personal Collection
-		</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOWL — Personal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        :root {
+            --pink-light: #ffd6e7;
+            --pink-mid: #ff8fbf;
+            --pink-deep: #d63f7a;
+            --blue-light: #d6eaff;
+            --blue-mid: #7ab8f5;
+            --blue-deep: #1e5fa8;
+            --blue-dark: #0d2b5e;
+            --white-tint: rgba(255,255,255,0.88);
+            --panel-bg: rgba(255, 240, 248, 0.82);
+            --panel-border: rgba(200, 150, 200, 0.4);
+            --text: #2a1540;
+            --text-soft: #6b4a7a;
+        }
 
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(160deg, #e8f0ff 0%, #fce4f0 50%, #e0ecff 100%);
+            min-height: 100vh;
+            color: var(--text);
+        }
 
+        /* ── HEADER ── */
+        .site-header {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
 
+        .header-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: brightness(0.85) saturate(1.4) hue-rotate(10deg);
+        }
 
+        .header-overlay-1 {
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(30, 95, 168, 0.35) 0%,
+                rgba(214, 63, 122, 0.20) 50%,
+                rgba(30, 95, 168, 0.30) 100%
+            );
+        }
+        .header-overlay-2 {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom,
+                rgba(13, 43, 94, 0.15) 0%,
+                rgba(0,0,0,0) 40%,
+                rgba(230, 200, 230, 0.45) 100%
+            );
+        }
+        .header-overlay-3 {
+            position: absolute; inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 3px,
+                rgba(255,255,255,0.03) 3px,
+                rgba(255,255,255,0.03) 4px
+            );
+            pointer-events: none;
+        }
 
+        .header-title {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 10;
+        }
 
+        .header-title h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            color: white;
+            text-shadow:
+                0 0 20px rgba(180, 100, 220, 0.9),
+                0 0 40px rgba(100, 160, 255, 0.6),
+                0 2px 4px rgba(0,0,0,0.5);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
 
+        .header-title span {
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.35em;
+            color: rgba(255,220,240,0.9);
+            text-shadow: 0 0 10px rgba(200,150,255,0.8);
+            display: block;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
 
+        @keyframes titleGlow {
+            from { text-shadow: 0 0 15px rgba(180,100,220,0.7), 0 0 30px rgba(100,160,255,0.4), 0 2px 4px rgba(0,0,0,0.5); }
+            to   { text-shadow: 0 0 25px rgba(220,100,200,0.95), 0 0 50px rgba(120,180,255,0.7), 0 2px 4px rgba(0,0,0,0.5); }
+        }
 
+        .petals-container {
+            position: absolute; inset: 0;
+            pointer-events: none; overflow: hidden;
+            z-index: 5;
+        }
 
+        .petal {
+            position: absolute;
+            width: 10px; height: 10px;
+            border-radius: 50% 0 50% 0;
+            opacity: 0;
+            animation: petalFall linear infinite;
+        }
 
+        @keyframes petalFall {
+            0%   { transform: translateY(-20px) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(300px) rotate(720deg); opacity: 0; }
+        }
 
-</body>
+        /* ── TOP NAV ── */
+        .top-nav {
+            background: linear-gradient(90deg, var(--blue-dark) 0%, #2a1256 50%, var(--blue-dark) 100%);
+            border-bottom: 2px solid var(--pink-mid);
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            position: relative;
+            box-shadow: 0 2px 16px rgba(214,63,122,0.3);
+        }
+
+        .top-nav::before {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--blue-mid), transparent);
+        }
+
+        .top-nav a {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            color: var(--pink-light);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-right: 1px solid rgba(255,255,255,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top-nav a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(214,63,122,0.25), rgba(122,184,245,0.25));
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .top-nav a:hover { color: white; }
+        .top-nav a:hover::before { transform: translateY(0); }
+        .top-nav a.active {
+            color: white;
+            background: rgba(214,63,122,0.18);
+        }
+
+        /* ── LAYOUT ── */
+        .page-body {
+            display: flex;
+            gap: 0;
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 16px;
+            align-items: flex-start;
+        }
+
+        /* ── SIDEBAR ── */
+        .sidebar {
+            width: 190px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .sidebar-panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 8px;
+            overflow: hidden;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 20px rgba(100,80,160,0.12);
+        }
+
+        .panel-title {
+            background: linear-gradient(90deg, var(--blue-deep), #5a2090);
+            color: white;
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            padding: 6px 12px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--pink-mid);
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 8px 0;
+        }
+
+        .sidebar-nav li { border-bottom: 1px solid rgba(200,150,200,0.15); }
+        .sidebar-nav li:last-child { border-bottom: none; }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 6px 14px;
+            color: var(--text-soft);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .sidebar-nav a::before {
+            content: '✦';
+            font-size: 0.6rem;
+            margin-right: 6px;
+            color: var(--pink-mid);
+            vertical-align: middle;
+            transition: color 0.2s;
+        }
+
+        .sidebar-nav a:hover {
+            color: var(--blue-deep);
+            background: linear-gradient(90deg, rgba(214,63,122,0.08), transparent);
+            padding-left: 18px;
+        }
+
+        .sidebar-nav a:hover::before { color: var(--blue-mid); }
+        .sidebar-nav a.active {
+            color: var(--pink-deep);
+            font-weight: 600;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--pink-deep);
+            padding: 8px 14px 4px;
+            display: block;
+        }
+
+        /* ── MAIN CONTENT ── */
+        .main-content {
+            flex: 1;
+            min-width: 0;
+            margin-left: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .content-panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 8px;
+            overflow: hidden;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 20px rgba(100,80,160,0.10);
+            animation: fadeIn 0.6s ease-out both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-panel:nth-child(2) { animation-delay: 0.1s; }
+        .content-panel:nth-child(3) { animation-delay: 0.2s; }
+        .content-panel:nth-child(4) { animation-delay: 0.3s; }
+
+        .content-panel-title {
+            background: linear-gradient(90deg, #b03080, var(--blue-deep));
+            color: white;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.14em;
+            padding: 7px 16px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .content-panel-title::before {
+            content: '❀';
+            font-size: 0.9rem;
+            filter: drop-shadow(0 0 4px rgba(255,180,220,0.8));
+        }
+
+        .content-panel-body {
+            padding: 18px 20px;
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: var(--text-soft);
+        }
+
+        .content-panel-body p { margin-bottom: 12px; }
+        .content-panel-body p:last-child { margin-bottom: 0; }
+
+        .content-panel-body a {
+            color: var(--blue-deep);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--pink-mid);
+            transition: all 0.2s;
+        }
+
+        .content-panel-body a:hover {
+            color: var(--pink-deep);
+            border-bottom-color: var(--pink-deep);
+        }
+
+        /* ── PROFILE PHOTO BLOCK ── */
+        .profile-block {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .profile-photo {
+            flex-shrink: 0;
+            width: 180px;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            border-radius: 8px;
+            border: 2px solid var(--pink-mid);
+            box-shadow: 0 4px 16px rgba(214,63,122,0.25);
+            display: block;
+        }
+
+        .profile-photo-caption {
+            text-align: center;
+            font-size: 0.72rem;
+            color: var(--text-soft);
+            margin-top: 6px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .profile-text { flex: 1; min-width: 0; }
+
+        /* ── PHOTO ROW ── */
+        .photo-row {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .photo-row img {
+            border-radius: 8px;
+            border: 2px solid var(--blue-mid);
+            box-shadow: 0 4px 16px rgba(30,95,168,0.2);
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-row img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 28px rgba(214,63,122,0.3);
+        }
+
+        /* ── TIMELINE DOT ── */
+        .timeline-entry {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 14px;
+        }
+
+        .timeline-entry::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.65rem;
+            color: var(--pink-mid);
+        }
+
+        .timeline-entry strong {
+            color: var(--pink-deep);
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 3px;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.06em;
+        }
+
+        /* ── QUICK LINKS ── */
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .quick-link-btn {
+            display: inline-block;
+            padding: 7px 18px;
+            background: linear-gradient(135deg, rgba(214,63,122,0.12), rgba(30,95,168,0.12));
+            border: 1px solid var(--pink-mid);
+            border-radius: 20px;
+            color: var(--blue-deep);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            transition: all 0.25s ease;
+        }
+
+        .quick-link-btn:hover {
+            background: linear-gradient(135deg, rgba(214,63,122,0.28), rgba(30,95,168,0.28));
+            color: white;
+            border-color: var(--pink-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(214,63,122,0.3);
+        }
+
+        /* ── FOOTER ── */
+        .site-footer {
+            text-align: center;
+            padding: 16px;
+            font-size: 0.75rem;
+            color: var(--text-soft);
+            opacity: 0.7;
+            margin-top: 10px;
+            border-top: 1px solid rgba(200,150,200,0.3);
+        }
+
+        /* ── BACKGROUND GLOW ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background-image:
+                radial-gradient(ellipse at 20% 80%, rgba(255,182,213,0.18) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(122,184,245,0.18) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(220,200,255,0.10) 0%, transparent 70%);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 700px) {
+            .page-body { flex-direction: column; }
+            .sidebar { width: 100%; }
+            .main-content { margin-left: 0; }
+            .site-header { height: 200px; }
+            .header-title h1 { font-size: 2rem; }
+            .top-nav a { padding: 0.5rem 0.8rem; font-size: 0.75rem; }
+            .profile-block { flex-direction: column; }
+            .profile-photo { width: 100%; max-width: 240px; margin: 0 auto; }
+        }
+    </style>
 </head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="site-header">
+    <img class="header-img" src="./index/style/personalbg.jpg" alt="Personal header">
+    <div class="header-overlay-1"></div>
+    <div class="header-overlay-2"></div>
+    <div class="header-overlay-3"></div>
+    <div class="petals-container" id="petals"></div>
+    <div class="header-title">
+        <h1>SOWL</h1>
+        <span>Personal — Saul Tobias</span>
+    </div>
+</header>
+
+<!-- ── TOP NAV ── -->
+<nav class="top-nav">
+    <a href="personal.html" class="active">Personal</a>
+    <a href="family.html">Family</a>
+    <a href="education.html">Education</a>
+    <a href="collection.html">Collection</a>
+    <a href="./index/card_info.html">Info</a>
+    <a href="./index/login.html">Login</a>
+</nav>
+
+<!-- ── PAGE BODY ── -->
+<div class="page-body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-panel">
+            <div class="panel-title">Navigation</div>
+            <ul class="sidebar-nav">
+                <li><span class="sidebar-section-label">Main</span></li>
+                <li><a href="index.html">Home</a></li>
+                <li><span class="sidebar-section-label">Pages</span></li>
+                <li><a href="personal.html" class="active">Personal</a></li>
+                <li><a href="family.html">Family</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="collection.html">Collection</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-panel">
+            <div class="panel-title">Personal</div>
+            <ul class="sidebar-nav">
+                <li><a href="#childhood">Childhood</a></li>
+                <li><a href="#youth">Growing Up</a></li>
+                <li><a href="#present">Present</a></li>
+                <li><a href="personal_album.html">Photo Album</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-panel">
+            <div class="panel-title">Links</div>
+            <ul class="sidebar-nav">
+                <li><a href="./index/card_info.html">Info Card</a></li>
+                <li><a href="./index/login.html">Login</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- INTRO PANEL -->
+        <div class="content-panel" id="childhood">
+            <div class="content-panel-title">Saul Tobias — Introduction</div>
+            <div class="content-panel-body">
+                <div class="profile-block">
+                    <div class="profile-photo">
+                        <img src="./personal/per (2).jpg" alt="Saul Tobias">
+                        <div class="profile-photo-caption">Saul Tobias</div>
+                    </div>
+                    <div class="profile-text">
+                        <p>
+                            Born on the <strong>13th of October, 2009</strong> — a Libra. From an early age, I was a reclusive person, finding comfort in solitude and independence. I learned most of what I know through my own experience, forging my own path quietly.
+                        </p>
+                        <p>
+                            Socializing with peers was never easy back then — I wasn't exactly a loner, but I certainly wasn't anyone's closest friend either. People often called me smart, even one of a kind, though I'd hesitate to say that still holds true.
+                        </p>
+                        <p>
+                            As a child I wasn't a troublemaker, though I had my moments. I struggled with anger — a habit of suppression that would eventually boil over. What I mostly did was simple: play games and explore the internet. Technology was always my world.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TEENAGE / GROWING UP PANEL -->
+        <div class="content-panel" id="youth">
+            <div class="content-panel-title">Growing Up</div>
+            <div class="content-panel-body">
+                <div class="profile-block">
+                    <div class="profile-text">
+                        <p>
+                            In my early teenage years, I found myself confused about my direction. The pandemic arrived just as I was stepping into adolescence, keeping me indoors and alone — and I became even more immersed in the absence of companionship.
+                        </p>
+                        <p>
+                            That time was defined by consuming media, exploring what I liked, and taking the first quiet steps toward forming a self-identity. I hadn't fully grasped who I was yet, but the searching had begun.
+                        </p>
+                        <p>
+                            Life was largely uneventful — just me and my own thoughts — but I was still happy-go-lucky, blissfully unaware of much of the world's complexity. There was still so much left to learn.
+                        </p>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./personal/per (7).jpg" alt="Growing up">
+                        <div class="profile-photo-caption">Finding myself</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RECENT YEARS PANEL -->
+        <div class="content-panel" id="present">
+            <div class="content-panel-title">Recent Years</div>
+            <div class="content-panel-body">
+
+                <div class="photo-row" style="margin-bottom: 18px;">
+                    <img src="./personal/per (20).jpg" alt="Saul — recent">
+                </div>
+
+                <div class="timeline-entry">
+                    <strong>8th Grade</strong>
+                    Started out quiet, but found my footing. A friend group of five made it genuinely enjoyable — the first real social ground I'd stand on.
+                </div>
+                <div class="timeline-entry">
+                    <strong>9th Grade</strong>
+                    The true beginning. Curiosity took over — new friends, new feelings. I became interested in a familiar face from elementary school. Nothing came of it, but something shifted inside me.
+                </div>
+                <div class="timeline-entry">
+                    <strong>10th Grade</strong>
+                    My prime. Social life was at its peak — I hung out with many people, befriended nearly everyone, and found myself in the highest social circles of my class. Grades followed suit, reaching an all-time high.
+                </div>
+                <div class="timeline-entry">
+                    <strong>11th Grade — Now</strong>
+                    Senior High School. The search for purpose has become more conscious, more intentional. I am still finding my way — trying to discover what it is I'm meant to do, and who I am meant to become.
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK LINKS PANEL -->
+        <div class="content-panel">
+            <div class="content-panel-title">Explore More</div>
+            <div class="content-panel-body">
+                <div class="quick-links">
+                    <a href="personal_album.html" class="quick-link-btn">📷 Photo Album</a>
+                    <a href="education.html" class="quick-link-btn">🎓 School Experience</a>
+                    <a href="family.html" class="quick-link-btn">🏠 About My Family</a>
+                    <a href="collection.html" class="quick-link-btn">✨ My Collection</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<footer class="site-footer">
+    &copy; 2026 SOWL &nbsp;·&nbsp; All rights reserved
+</footer>
+
+<script>
+    // Floating sakura petals
+    const container = document.getElementById('petals');
+    const colors = ['#ffb3d1','#ffd6e7','#c8a0e8','#a8c8ff','#ffaed4'];
+
+    for (let i = 0; i < 18; i++) {
+        const p = document.createElement('div');
+        p.className = 'petal';
+        const size = 7 + Math.random() * 8;
+        p.style.cssText = `
+            width: ${size}px;
+            height: ${size}px;
+            left: ${Math.random() * 100}%;
+            background: ${colors[Math.floor(Math.random() * colors.length)]};
+            animation-duration: ${3 + Math.random() * 5}s;
+            animation-delay: ${Math.random() * 6}s;
+            border-radius: ${Math.random() > 0.5 ? '50% 0 50% 0' : '0 50% 0 50%'};
+            opacity: 0;
+        `;
+        container.appendChild(p);
+    }
+</script>
+</body>
 </html>
